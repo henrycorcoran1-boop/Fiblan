@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>About | Fiblan Consulting</title>
+<meta name="description" content="Fiblan Consulting is an engineering and project management consultancy based in Kildare, Ireland, with wide reachback across design, commercial and delivery specialists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#faf5f0;color:#434e5a;font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:#e2622e;text-decoration:none;}
+  a:hover{color:#1d2e3b;}
+  ::selection{background:#1d2e3b;color:#faf5f0;}
+  img{max-width:100%;}
+  @media (max-width:840px){
+    [data-desktop]{display:none !important;}
+    [data-burger]{display:inline-flex !important;}
+  }
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(250,250,250,0.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #ece2da;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="Home.dc.html" aria-label="Fiblan Consulting home" style="display:inline-flex;align-items:center;gap:10px;">
+      <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="6" width="32" height="6" rx="3" fill="#e2622e"></rect><polyline points="5,32 20,15 35,32" fill="none" stroke="#e2622e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polyline></svg><span style="display:flex;flex-direction:column;gap:1px;"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:18px;line-height:1;letter-spacing:0.01em;color:#1d2e3b;text-transform:uppercase;">Fiblan</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:9px;line-height:1;letter-spacing:0.22em;color:#5a6673;">CONSULTING</span></span>
+    </a>
+    <nav data-desktop style="display:flex;align-items:center;gap:clamp(18px,2.4vw,34px);">
+      <a href="Home.dc.html" style="font-size:14.5px;color:#5a6673;padding:5px 0;border-bottom:1px solid transparent;" style-hover="color:#1d2e3b;">Home</a>
+      <a href="Services.dc.html" style="font-size:14.5px;color:#5a6673;padding:5px 0;border-bottom:1px solid transparent;" style-hover="color:#1d2e3b;">Services</a>
+      <a href="About.dc.html" style="font-size:14.5px;color:#1d2e3b;padding:5px 0;border-bottom:1px solid #e2622e;">About</a>
+      <a href="HowWeWork.dc.html" style="font-size:14.5px;color:#5a6673;padding:5px 0;border-bottom:1px solid transparent;" style-hover="color:#1d2e3b;">How We Work</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a data-desktop href="Contact.dc.html" style="display:inline-flex;align-items:center;background:#e2622e;color:#ffffff;font-size:14px;font-weight:500;padding:11px 22px;border-radius:999px;border:1px solid #e2622e;transition:background .2s ease, border-color .2s ease;" style-hover="background:#1d2e3b;border-color:#1d2e3b;">Talk to us</a>
+      <button data-burger onClick="{{ openMobile }}" aria-label="Open menu" style="display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:transparent;border:1px solid #e3d6c8;cursor:pointer;padding:0 11px;">
+        <span style="height:1.5px;background:#1d2e3b;display:block;"></span>
+        <span style="height:1.5px;background:#1d2e3b;display:block;"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:120;background:#faf5f0;padding:22px clamp(20px,6vw,40px);display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;justify-content:space-between;height:48px;">
+      <span style="display:inline-flex;align-items:center;gap:10px;"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="6" width="32" height="6" rx="3" fill="#e2622e"></rect><polyline points="5,32 20,15 35,32" fill="none" stroke="#e2622e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polyline></svg><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:24px;line-height:1;letter-spacing:0.01em;color:#1d2e3b;text-transform:uppercase;">Fiblan</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;line-height:1;letter-spacing:0.22em;color:#5a6673;">CONSULTING</span></span></span>
+      <button onClick="{{ closeMobile }}" aria-label="Close menu" style="width:42px;height:42px;background:transparent;border:1px solid #e3d6c8;cursor:pointer;font-size:22px;color:#1d2e3b;line-height:1;">&times;</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;margin-top:36px;">
+      <a href="Home.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#1d2e3b;padding:16px 0;border-bottom:1px solid #ece2da;">Home</a>
+      <a href="Services.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#1d2e3b;padding:16px 0;border-bottom:1px solid #ece2da;">Services</a>
+      <a href="About.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#1d2e3b;padding:16px 0;border-bottom:1px solid #ece2da;">About</a>
+      <a href="HowWeWork.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#1d2e3b;padding:16px 0;border-bottom:1px solid #ece2da;">How We Work</a>
+    </nav>
+    <a href="Contact.dc.html" onClick="{{ closeMobile }}" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;background:#e2622e;color:#ffffff;font-size:16px;font-weight:500;padding:17px 24px;border-radius:999px;">Talk to us</a>
+  </div>
+</sc-if>
+
+<main>
+  <section style="padding:clamp(56px,7vw,92px) 0 clamp(24px,3vw,32px);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <h1 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(38px,5.6vw,64px);line-height:1.06;letter-spacing:-0.015em;color:#1d2e3b;margin:0;max-width:17ch;">A wide reachback network, on call.</h1>
+      <p style="font-size:clamp(17px,1.3vw,19px);line-height:1.6;color:#434e5a;max-width:58ch;margin:22px 0 0;">Fiblan Consulting is built on a deep bench of highly skilled professionals — across design, commercial and project management — drawn in as and when each project needs them, not carried as permanent overhead.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,7vw,96px) 0;border-top:1px solid #ece2da;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px);">
+        <div style="flex:1 1 260px;min-width:0;">
+          <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(27px,3.2vw,38px);line-height:1.12;letter-spacing:-0.01em;color:#1d2e3b;margin:0;max-width:12ch;">Built on real sites.</h2>
+        </div>
+        <div style="flex:2 1 460px;min-width:0;display:flex;flex-direction:column;gap:20px;">
+          <p style="font-size:16.5px;line-height:1.7;color:#434e5a;margin:0;max-width:62ch;">Fiblan's reachback spans quantity surveyors, schedulers, designers, site managers and commercial specialists — a bench far wider than any single in-house team, ready to mobilise on projects from residential extensions to large-scale developments.</p>
+          <p style="font-size:16.5px;line-height:1.7;color:#434e5a;margin:0;max-width:62ch;">We started Fiblan because too many projects — especially smaller ones — go without proper oversight, and end up costing more in rework than the right specialist would ever have cost upfront.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid #ecd9c6;background:#fdf1e6;">
+    <div style="aspect-ratio:21/9;overflow:hidden;"><img src="https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=2000&q=80" alt="Modern building elevation viewed from below" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy"/></div>
+    <div style="max-width:1200px;margin:0 auto;padding:clamp(40px,5vw,56px) clamp(20px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px);">
+        <div style="flex:1 1 260px;min-width:0;">
+          <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(27px,3.2vw,38px);line-height:1.12;letter-spacing:-0.01em;color:#1d2e3b;margin:0;max-width:11ch;">The right people, on demand.</h2>
+        </div>
+        <div style="flex:2 1 460px;min-width:0;">
+          <p style="font-size:16px;line-height:1.65;color:#434e5a;margin:0;max-width:62ch;">Rather than a fixed bench, we draw on a vetted network of design, commercial and project management professionals — assembled around your project, then stood down once the need has passed. You pay for expertise, not idle capacity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,7vw,96px) 0;border-top:1px solid #ece2da;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,80px);">
+        <div style="flex:1 1 260px;min-width:0;">
+          <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(27px,3.2vw,38px);line-height:1.12;letter-spacing:-0.01em;color:#1d2e3b;margin:0;max-width:11ch;">A few principles.</h2>
+        </div>
+        <div style="flex:2 1 460px;min-width:0;">
+          <div style="padding:0 0 26px;border-bottom:1px solid #ece2da;">
+            <h3 style="font-family:'IBM Plex Sans';font-weight:600;font-size:20px;color:#1d2e3b;margin:0 0 8px;">A team assembled per project</h3>
+            <p style="font-size:16px;line-height:1.65;color:#434e5a;max-width:62ch;margin:0;">You get the specialists your project actually needs, coordinated by the same lead throughout — never a generic account team.</p>
+          </div>
+          <div style="padding:26px 0;border-bottom:1px solid #ece2da;">
+            <h3 style="font-family:'IBM Plex Sans';font-weight:600;font-size:20px;color:#1d2e3b;margin:0 0 8px;">Honest scoping</h3>
+            <p style="font-size:16px;line-height:1.65;color:#434e5a;max-width:62ch;margin:0;">A clear fee for a clear scope of work — no open-ended time-and-materials billing.</p>
+          </div>
+          <div style="padding:26px 0;border-bottom:1px solid #ece2da;">
+            <h3 style="font-family:'IBM Plex Sans';font-weight:600;font-size:20px;color:#1d2e3b;margin:0 0 8px;">Independent advice</h3>
+            <p style="font-size:16px;line-height:1.65;color:#434e5a;max-width:62ch;margin:0;">We're engaged by you, not the contractor — our judgement is only ever in your interest.</p>
+          </div>
+          <div style="padding:26px 0 0;">
+            <h3 style="font-family:'IBM Plex Sans';font-weight:600;font-size:20px;color:#1d2e3b;margin:0 0 8px;">Present on site</h3>
+            <p style="font-size:16px;line-height:1.65;color:#434e5a;max-width:62ch;margin:0;">Problems get caught in person, on site — not from a spreadsheet at a desk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(72px,9vw,120px) 0;background:#1d2e3b;color:#f2f3f5;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(28px,3.8vw,44px);line-height:1.1;letter-spacing:-0.012em;color:#ffffff;margin:0;max-width:18ch;">Let's see if we're a fit.</h2>
+      <p style="font-size:17px;line-height:1.65;color:#c2c9d2;max-width:54ch;margin:20px 0 0;">Tell us what you're building. No pressure, no sales pitch — just an honest answer.</p>
+      <div style="margin-top:32px;">
+        <a href="Contact.dc.html" style="display:inline-flex;align-items:center;background:#e2622e;color:#ffffff;font-size:16px;font-weight:500;padding:16px 30px;border-radius:999px;border:1px solid #e2622e;transition:background .2s ease, color .2s ease, border-color .2s ease;" style-hover="background:transparent;color:#ffffff;border-color:#e2622e;">Talk to us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#16232d;color:#c2c9d2;padding:clamp(52px,6vw,80px) 0 32px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;gap:36px 64px;justify-content:space-between;">
+        <div style="flex:1 1 260px;min-width:0;">
+          <span style="display:inline-flex;align-items:center;gap:10px;"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="4" y="6" width="32" height="6" rx="3" fill="#e2622e"></rect><polyline points="5,32 20,15 35,32" fill="none" stroke="#e2622e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></polyline></svg><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:22px;line-height:1;letter-spacing:0.01em;color:#ffffff;text-transform:uppercase;">Fiblan</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;line-height:1;letter-spacing:0.22em;color:#8aa0bf;">CONSULTING</span></span></span>
+          <p style="font-size:15px;line-height:1.6;color:#94a0ad;margin:14px 0 0;max-width:32ch;">Engineering and project management consultancy for construction of every scale.</p>
+        </div>
+        <div style="flex:0 1 auto;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#e2622e;margin-bottom:14px;">Contact</div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="mailto:info@fiblan.com" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">info@fiblan.com</a>
+            <span style="font-size:15px;color:#94a0ad;">Kildare, Ireland</span>
+            <span style="font-size:15px;color:#94a0ad;">fiblan.com</span>
+          </div>
+        </div>
+        <div style="flex:0 1 auto;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#e2622e;margin-bottom:14px;">Pages</div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="Home.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">Home</a>
+            <a href="Services.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">Services</a>
+            <a href="About.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">About</a>
+            <a href="HowWeWork.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">How We Work</a>
+            <a href="Contact.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">Contact</a>
+          </div>
+        </div>
+        <div style="flex:0 1 auto;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#e2622e;margin-bottom:14px;">Elsewhere</div>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">LinkedIn</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:clamp(40px,5vw,60px);padding-top:22px;border-top:1px solid rgba(255,255,255,0.1);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;color:#7f8b98;">© 2026 Fiblan Consulting</span>
+        <div style="display:flex;gap:22px;">
+          <a href="#" style="font-size:13px;color:#7f8b98;" style-hover="color:#ffffff;">Privacy</a>
+          <a href="#" style="font-size:13px;color:#7f8b98;" style-hover="color:#ffffff;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { mobileOpen:false };
+  renderVals(){
+    return {
+      mobileOpen: this.state.mobileOpen,
+      openMobile: () => this.setState({ mobileOpen:true }),
+      closeMobile: () => this.setState({ mobileOpen:false }),
+    };
+  }
+}
+</script>
+</body>
+</html>
