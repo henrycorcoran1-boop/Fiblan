@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact | Arya Innovation</title>
+<meta name="description" content="Get in touch with Arya Innovation. Tell us about your workflow — we reply within one business day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fafafa;color:#434e5a;font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  a{color:#3f5f92;text-decoration:none;}
+  a:hover{color:#2c3e50;}
+  ::selection{background:#2c3e50;color:#fafafa;}
+  input,textarea,select,button{font-family:inherit;}
+  input::placeholder,textarea::placeholder{color:#a7afb8;}
+  @media (max-width:840px){
+    [data-desktop]{display:none !important;}
+    [data-burger]{display:inline-flex !important;}
+  }
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(250,250,250,0.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #e6e8eb;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="Home.dc.html" aria-label="Arya Innovation home" style="display:inline-flex;align-items:center;gap:10px;">
+      <svg width="30" height="38" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="22,4 26,4 12,52 4,52" fill="#2c3e50"></polygon><polygon points="22,4 18,4 32,52 40,52" fill="none" stroke="#2c3e50" stroke-width="1.6"></polygon><rect x="11" y="34" width="11" height="6" fill="#2c3e50"></rect><rect x="22" y="34" width="11" height="6" fill="none" stroke="#2c3e50" stroke-width="1.6"></rect></svg><span style="width:1px;height:30px;background:#d7dbe0;display:inline-block;"></span><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:20px;line-height:1;letter-spacing:0.005em;color:#2c3e50;">Arya</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:9px;line-height:1;letter-spacing:0.2em;color:#5a6673;">INNOVATIONS</span></span>
+    </a>
+    <nav data-desktop style="display:flex;align-items:center;gap:clamp(20px,2.6vw,38px);">
+      <a href="About.dc.html" style="font-size:14.5px;color:#5a6673;padding:5px 0;border-bottom:1px solid transparent;" style-hover="color:#2c3e50;">About</a>
+      <a href="WhatWeBuild.dc.html" style="font-size:14.5px;color:#5a6673;padding:5px 0;border-bottom:1px solid transparent;" style-hover="color:#2c3e50;">What We Build</a>
+      <a href="HowWeWork.dc.html" style="font-size:14.5px;color:#5a6673;padding:5px 0;border-bottom:1px solid transparent;" style-hover="color:#2c3e50;">How We Work</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a data-desktop href="Contact.dc.html" style="display:inline-flex;align-items:center;background:#2c3e50;color:#fafafa;font-size:14px;font-weight:500;padding:11px 22px;border-radius:999px;border:1px solid #2c3e50;transition:background .2s ease, border-color .2s ease;" style-hover="background:#3f5f92;border-color:#3f5f92;">Start a conversation</a>
+      <button data-burger onClick="{{ openMobile }}" aria-label="Open menu" style="display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:transparent;border:1px solid #d7dbe0;cursor:pointer;padding:0 11px;">
+        <span style="height:1.5px;background:#2c3e50;display:block;"></span>
+        <span style="height:1.5px;background:#2c3e50;display:block;"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:120;background:#fafafa;padding:22px clamp(20px,6vw,40px);display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;justify-content:space-between;height:48px;">
+      <span style="display:inline-flex;align-items:center;gap:10px;"><svg width="34" height="42" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="22,4 26,4 12,52 4,52" fill="#2c3e50"></polygon><polygon points="22,4 18,4 32,52 40,52" fill="none" stroke="#2c3e50" stroke-width="1.6"></polygon><rect x="11" y="34" width="11" height="6" fill="#2c3e50"></rect><rect x="22" y="34" width="11" height="6" fill="none" stroke="#2c3e50" stroke-width="1.6"></rect></svg><span style="width:1px;height:34px;background:#d7dbe0;display:inline-block;"></span><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:23px;line-height:1;letter-spacing:0.005em;color:#2c3e50;">Arya</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;line-height:1;letter-spacing:0.2em;color:#5a6673;">INNOVATIONS</span></span></span>
+      <button onClick="{{ closeMobile }}" aria-label="Close menu" style="width:42px;height:42px;background:transparent;border:1px solid #d7dbe0;cursor:pointer;font-size:22px;color:#2c3e50;line-height:1;">&times;</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;margin-top:36px;">
+      <a href="About.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#2c3e50;padding:16px 0;border-bottom:1px solid #e6e8eb;">About</a>
+      <a href="WhatWeBuild.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#2c3e50;padding:16px 0;border-bottom:1px solid #e6e8eb;">What We Build</a>
+      <a href="HowWeWork.dc.html" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Serif',Georgia,serif;font-size:30px;color:#2c3e50;padding:16px 0;border-bottom:1px solid #e6e8eb;">How We Work</a>
+    </nav>
+    <a href="Contact.dc.html" onClick="{{ closeMobile }}" style="margin-top:auto;display:inline-flex;align-items:center;justify-content:center;background:#2c3e50;color:#fafafa;font-size:16px;font-weight:500;padding:17px 24px;border-radius:999px;">Start a conversation</a>
+  </div>
+</sc-if>
+
+<main>
+  <section style="padding:clamp(56px,7vw,92px) 0 clamp(24px,3vw,32px);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <h1 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(38px,5.6vw,64px);line-height:1.06;letter-spacing:-0.015em;color:#2c3e50;margin:0;max-width:12ch;">Start a conversation.</h1>
+      <p style="font-size:clamp(17px,1.3vw,19px);line-height:1.6;color:#434e5a;max-width:58ch;margin:22px 0 0;">Tell us about the workflow that's costing you time. We reply within one business day, and we'll tell you honestly whether custom software is the right answer.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,6vw,72px) 0 clamp(64px,8vw,110px);border-top:1px solid #e6e8eb;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(48px,6vw,88px);align-items:flex-start;">
+
+        <div style="flex:1 1 460px;min-width:0;">
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:8px 0 0;">
+              <h2 style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:500;font-size:clamp(26px,2.8vw,32px);color:#2c3e50;margin:0;">Thanks — that's with us.</h2>
+              <p style="font-size:16px;line-height:1.65;color:#434e5a;max-width:48ch;margin:16px 0 0;">We reply within one business day. If it looks like a fit, we'll suggest a short call to talk through the workflow.</p>
+              <button onClick="{{ resetForm }}" style="margin-top:24px;background:transparent;color:#3f5f92;border:none;border-bottom:1px solid rgba(63,95,146,0.35);font-size:15px;font-weight:500;padding:4px 0;cursor:pointer;" style-hover="color:#2c3e50;border-color:#2c3e50;">Send another message</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:26px;">
+              <div style="display:flex;flex-wrap:wrap;gap:26px;">
+                <label style="flex:1 1 200px;display:flex;flex-direction:column;gap:8px;">
+                  <span style="font-size:13px;color:#8a8378;">Name</span>
+                  <input type="text" value="{{ formName }}" onChange="{{ onNameChange }}" placeholder="Your name" style="font-size:16px;color:#2c3e50;background:transparent;border:none;border-bottom:1.5px solid #c7cdd4;padding:10px 2px;" style-focus="border-color:#2c3e50;outline:none;"/>
+                </label>
+                <label style="flex:1 1 200px;display:flex;flex-direction:column;gap:8px;">
+                  <span style="font-size:13px;color:#8a8378;">Email</span>
+                  <input type="email" value="{{ formEmail }}" onChange="{{ onEmailChange }}" placeholder="you@company.com" style="font-size:16px;color:#2c3e50;background:transparent;border:none;border-bottom:1.5px solid #c7cdd4;padding:10px 2px;" style-focus="border-color:#2c3e50;outline:none;"/>
+                </label>
+              </div>
+              <label style="display:flex;flex-direction:column;gap:8px;">
+                <span style="font-size:13px;color:#8a8378;">Company</span>
+                <input type="text" value="{{ formCompany }}" onChange="{{ onCompanyChange }}" placeholder="Optional" style="font-size:16px;color:#2c3e50;background:transparent;border:none;border-bottom:1.5px solid #c7cdd4;padding:10px 2px;" style-focus="border-color:#2c3e50;outline:none;"/>
+              </label>
+              <sc-if value="{{ showBudgetField }}" hint-placeholder-val="{{ true }}">
+                <label style="display:flex;flex-direction:column;gap:8px;">
+                  <span style="font-size:13px;color:#8a8378;">Project budget</span>
+                  <select value="{{ formBudget }}" onChange="{{ onBudgetChange }}" style="font-size:16px;color:#2c3e50;background:transparent;border:none;border-bottom:1.5px solid #c7cdd4;padding:10px 2px;" style-focus="border-color:#2c3e50;outline:none;">
+                    <option value="Under €25k">Under €25k</option>
+                    <option value="€25k – €75k">€25k – €75k</option>
+                    <option value="€75k – €150k">€75k – €150k</option>
+                    <option value="€150k+">€150k+</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </label>
+              </sc-if>
+              <label style="display:flex;flex-direction:column;gap:8px;">
+                <span style="font-size:13px;color:#8a8378;">Message</span>
+                <textarea value="{{ formMessage }}" onChange="{{ onMessageChange }}" placeholder="Tell us about the workflow you want to fix." rows="5" style="font-size:16px;color:#2c3e50;background:transparent;border:none;border-bottom:1.5px solid #c7cdd4;padding:10px 2px;resize:vertical;font-family:inherit;line-height:1.5;" style-focus="border-color:#2c3e50;outline:none;"></textarea>
+              </label>
+              <sc-if value="{{ errorMsg }}" hint-placeholder-val="{{ false }}">
+                <p style="font-size:14.5px;color:#a13d3d;margin:0;">{{ errorMsg }}</p>
+              </sc-if>
+              <div>
+                <button type="submit" style="display:inline-flex;align-items:center;background:#2c3e50;color:#fafafa;font-size:16px;font-weight:500;padding:16px 30px;border:1px solid #2c3e50;cursor:pointer;transition:background .2s ease, border-color .2s ease;" style-hover="background:#3f5f92;border-color:#3f5f92;">Send message</button>
+              </div>
+            </form>
+          </sc-if>
+        </div>
+
+        <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:36px;">
+          <div style="border-top:1px solid #e6e8eb;padding-top:20px;">
+            <div style="font-size:13px;color:#8a8378;margin-bottom:12px;">Direct</div>
+            <div style="display:flex;flex-direction:column;gap:9px;">
+              <a href="mailto:info@arya.ie" style="font-size:16px;color:#3f5f92;" style-hover="color:#2c3e50;">info@arya.ie</a>
+              <span style="font-size:15px;color:#5a6673;">Dublin, Ireland</span>
+              <span style="font-size:15px;color:#5a6673;">arya.ie</span>
+            </div>
+          </div>
+          <div style="border-top:1px solid #e6e8eb;padding-top:20px;">
+            <div style="font-size:13px;color:#8a8378;margin-bottom:14px;">What happens next</div>
+            <div style="display:flex;gap:14px;padding:10px 0;">
+              <div style="flex:0 0 auto;font-family:'IBM Plex Serif',Georgia,serif;color:#c7cdd4;width:20px;">01</div>
+              <p style="font-size:15px;line-height:1.6;color:#434e5a;margin:0;">We reply within one business day.</p>
+            </div>
+            <div style="display:flex;gap:14px;padding:10px 0;">
+              <div style="flex:0 0 auto;font-family:'IBM Plex Serif',Georgia,serif;color:#c7cdd4;width:20px;">02</div>
+              <p style="font-size:15px;line-height:1.6;color:#434e5a;margin:0;">If it's a fit, we set up a short call to understand the workflow.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#243342;color:#c2c9d2;padding:clamp(52px,6vw,80px) 0 32px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,56px);">
+      <div style="display:flex;flex-wrap:wrap;gap:36px 64px;justify-content:space-between;">
+        <div style="flex:1 1 260px;min-width:0;">
+          <span style="display:inline-flex;align-items:center;gap:10px;"><svg width="34" height="42" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="22,4 26,4 12,52 4,52" fill="#ffffff"></polygon><polygon points="22,4 18,4 32,52 40,52" fill="none" stroke="#ffffff" stroke-width="1.6"></polygon><rect x="11" y="34" width="11" height="6" fill="#ffffff"></rect><rect x="22" y="34" width="11" height="6" fill="none" stroke="#ffffff" stroke-width="1.6"></rect></svg><span style="width:1px;height:34px;background:rgba(255,255,255,0.25);display:inline-block;"></span><span style="display:flex;flex-direction:column;gap:2px;"><span style="font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:23px;line-height:1;letter-spacing:0.005em;color:#ffffff;">Arya</span><span style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;line-height:1;letter-spacing:0.2em;color:#8aa0bf;">INNOVATIONS</span></span></span>
+          <p style="font-size:15px;line-height:1.6;color:#94a0ad;margin:14px 0 0;max-width:32ch;">Bespoke software for construction professionals and organisations.</p>
+        </div>
+        <div style="flex:0 1 auto;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8aa0bf;margin-bottom:14px;">Contact</div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="mailto:info@arya.ie" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">info@arya.ie</a>
+            <span style="font-size:15px;color:#94a0ad;">Dublin, Ireland</span>
+            <span style="font-size:15px;color:#94a0ad;">arya.ie</span>
+          </div>
+        </div>
+        <div style="flex:0 1 auto;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8aa0bf;margin-bottom:14px;">Pages</div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <a href="About.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">About</a>
+            <a href="WhatWeBuild.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">What We Build</a>
+            <a href="HowWeWork.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">How We Work</a>
+            <a href="Contact.dc.html" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">Contact</a>
+          </div>
+        </div>
+        <div style="flex:0 1 auto;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#8aa0bf;margin-bottom:14px;">Elsewhere</div>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener" style="font-size:15px;color:#d6dce2;" style-hover="color:#ffffff;">LinkedIn</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;margin-top:clamp(40px,5vw,60px);padding-top:22px;border-top:1px solid rgba(255,255,255,0.1);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;color:#7f8b98;">© 2026 Arya Innovation</span>
+        <div style="display:flex;gap:22px;">
+          <a href="#" style="font-size:13px;color:#7f8b98;" style-hover="color:#ffffff;">Privacy</a>
+          <a href="#" style="font-size:13px;color:#7f8b98;" style-hover="color:#ffffff;">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showBudgetField&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Form&quot;}}">
+class Component extends DCLogic {
+  state = { mobileOpen:false, name:'', email:'', company:'', budget:'Under €25k', message:'', submitted:false, error:'' };
+
+  renderVals(){
+    return {
+      mobileOpen: this.state.mobileOpen,
+      openMobile: () => this.setState({ mobileOpen:true }),
+      closeMobile: () => this.setState({ mobileOpen:false }),
+      showBudgetField: (this.props.showBudgetField ?? true),
+      formName: this.state.name,
+      formEmail: this.state.email,
+      formCompany: this.state.company,
+      formBudget: this.state.budget,
+      formMessage: this.state.message,
+      onNameChange: (e) => this.setState({ name: e.target.value }),
+      onEmailChange: (e) => this.setState({ email: e.target.value }),
+      onCompanyChange: (e) => this.setState({ company: e.target.value }),
+      onBudgetChange: (e) => this.setState({ budget: e.target.value }),
+      onMessageChange: (e) => this.setState({ message: e.target.value }),
+      errorMsg: this.state.error,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      resetForm: () => this.setState({ submitted:false, name:'', email:'', company:'', message:'', error:'' }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        if (!this.state.name.trim() || !this.state.email.trim() || !this.state.message.trim()){
+          this.setState({ error: 'Please fill in your name, email and a short message.' });
+          return;
+        }
+        this.setState({ submitted:true, error:'' });
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>
